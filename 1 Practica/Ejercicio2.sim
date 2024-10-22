@@ -1,0 +1,24 @@
+in 00; leo el valor de ese puerto, si introdizco un 0 que me reste sino que me sume
+cmp c,; comparo el acumulador con el registro para realizar los saltos
+in 01; leo el valor de ese puerto, 1º numero
+mov b,a; lo muevo del acumulador al registro b
+in 02;leo el valor de ese puerto, 2º numero
+jz resta; si me salta a resta
+jnz suma; me salta a suma
+out 03
+jmp terminar
+
+suma:add b; suma el acumaldor con el registro b
+out 03
+jmp terminar
+
+resta:sub b;resta el acumaldor con el registro b
+jm negativa
+out 03
+jmp terminar
+
+negativa:mvi a,FF ; mvi cargar el acumulador con el valor que le pongamos en este caso FF
+out 03
+jmp terminar
+
+terminar:hlt

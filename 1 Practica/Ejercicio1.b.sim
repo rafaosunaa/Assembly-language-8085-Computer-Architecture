@@ -1,0 +1,18 @@
+in 00
+mov b,a
+in 01
+cmp b
+jc mayor
+jz iguales
+out 03
+jmp terminar
+
+mayor:mov a,b
+out 03
+jmp terminar
+
+iguales:mvi a,FF
+out 03
+jmp terminar
+
+terminar:hlt

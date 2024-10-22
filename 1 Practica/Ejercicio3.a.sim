@@ -1,0 +1,12 @@
+mvi b, 80
+vuelta: mov a,b
+izquierdaderecha: out 00
+rrc
+jnc izquierdaderecha
+mvi b,02
+mov a,b
+derechaizquierda:out 00
+rlc
+jnc derechaizquierda
+mvi b,40
+jmp vuelta
